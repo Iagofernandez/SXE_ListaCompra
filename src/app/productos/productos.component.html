@@ -8,7 +8,9 @@
   <!--Aqui se recorre el array de Productos
   Tambien se da lugar a una serie de RadioButtons, para indicar si esta a la venta o ya para comprar-->
   <tr *ngFor="let producto of productosA index as i;">
-    <td>
+    <!-- Gracias a poder emplear class dentro d euna etiqueta
+    nosotros podemos acceder a una clase-->
+    <td class="prueba">
       <input type="radio" name="comprado-{{i}}" value="si" [(ngModel)]="producto.comprado" [value]=true >Comprado
       <input type="radio" name="comprado-{{i}}" value="no" [(ngModel)]="producto.comprado" [value]=false> Comprar
     </td>
