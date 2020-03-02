@@ -8,10 +8,14 @@ import {Productos} from '../ClasesTypeScript/productos';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
+  selectedProducto: Productos;
 
   constructor() { }
   productosA = PRODUCTOS_ARRAY;
   ngOnInit() {
+  }
+    onSelect(producto: Productos): void {
+      this.selectedProducto = producto;
   }
 
 }
