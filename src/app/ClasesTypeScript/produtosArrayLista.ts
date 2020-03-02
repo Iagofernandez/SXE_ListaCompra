@@ -1,9 +1,9 @@
 import {Productos} from './productos';
 
 export const PRODUCTOS_ARRAY: Productos[] = [
-
-  {nombre: 'Teclado', desc: 'Hp'},
-  {nombre: 'Monitor', desc: 'Lg'},
-  {nombre: 'Raton', desc: 'Apple'},
+// Aqui se da origen al array de productos
+  {nombre: 'Teclado', desc: 'Hp', comprado: false},
+  {nombre: 'Monitor', desc: 'Lg', comprado: false},
+  {nombre: 'Raton', desc: 'Apple', comprado: false},
 
 ];

@@ -1,16 +1,28 @@
-<h1>Lista de poductos:</h1>
+<h1>Lista de compra :</h1>
 <table style="width: 100%; border: 1px solid black;">
   <tr>
     <th>Estado</th>
     <th>Producto</th>
     <th>Descripción</th>
   </tr>
+  <!--Aqui se recorre el array de Productos
+  Tambien se da lugar a una serie de RadioButtons, para indicar si esta a la venta o ya para comprar-->
   <tr *ngFor="let producto of productosA index as i;">
     <td>
-      <input type="radio" name="leido-{{i}}" value="si" style="aligment: center;"> Si
-      <input type="radio" name="leido-{{i}}" value="no" style="aligment: center;"> No
+      <input type="radio" name="comprado-{{i}}" value="si" [(ngModel)]="producto.comprado" [value]=true >Comprado
+      <input type="radio" name="comprado-{{i}}" value="no" [(ngModel)]="producto.comprado" [value]=false> Comprar
     </td>
+    <!--Acceso a las variable de los productos(nombre y descricion)
+    -->
      <td>{{producto.nombre}}</td>
     <td>{{producto.desc}}</td>
   </tr>
 </table>
+<!--Esta es como la segunda parte
+una lista donde se guardaran los productos que hayamos seleccionado-->
+<h1>Productos Comprados:</h1>
+<span *ngFor="let producto of productosA index as i;">
+<h3 *ngIf="productosA[i].comprado">{{producto.nombre}}Comprado</h3>
+
+
+</span>
